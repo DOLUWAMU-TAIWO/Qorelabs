@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Qorelabs Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Qorelabs Website project! This is a world-class, responsive, and interactive website designed to showcase Qorelabs' cutting-edge technology solutions. Built with a focus on elegance, advanced features, and seamless user experience, this project is intended to provide visitors with an exceptional digital journey.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+Qorelabs is a tech company dedicated to developing innovative software solutions across web, mobile, and desktop platforms. We also explore the forefront of quantum technology integration. This website provides an overview of our services, solutions, and the technologies we leverage to help our clients achieve their goals.
 
-### `npm start`
+## Technologies Used
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: For styling and ensuring a consistent design system throughout the application.
+- **Framer Motion**: To provide advanced animations and transitions, making the user experience dynamic and engaging.
+- **Axios**: To fetch dynamic images from Unsplash API to keep the content visually appealing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pages and Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Home**: A welcoming landing page with animations to highlight Qorelabs' mission and values.
+2. **About Us**: A section dedicated to the history of Qorelabs, its leadership, and our dedication to the quantum future.
+3. **Solutions**: Highlights the different technology solutions we provide, from corporate application development to quantum security integrations.
+4. **Contact**: A place to get in touch with us. Includes direct contact details, working hours, and a visually appealing corporate-themed background.
+5. **Navigation Bar**: Consistent and responsive navigation to allow smooth access to all sections of the website.
 
-### `npm test`
+## Installation and Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to set up and run the project locally:
 
-### `npm run build`
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
+   ```sh
+   cd qorelabs-website
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the required dependencies:
+   ```sh
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the development server:
+   ```sh
+   npm start
+   ```
+   This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The website is optimized for production deployment. To create a production build, use:
+```sh
+npm run build
+```
+This command will generate a `build` folder containing all the necessary files for deployment. The app is ready to be hosted on any static server or cloud service.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact Information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Email**: [Doluwamukuye@qorelabs.org](mailto:Doluwamukuye@qorelabs.org)
+- **Phone**: +49 163 5037203
+- **Address**: Weidenstraße 21, Wuppertal, 42117, Germany
+- **Working Hours**: Monday - Friday: 9 AM - 6 PM CET
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
 
-## Learn More
+We welcome contributions to improve the website. Please feel free to fork this repository and submit pull requests for improvements, bug fixes, or new features.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-### Code Splitting
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Unsplash**: For providing dynamic, high-quality images used across the website.
+- **React Community**: For the robust tools and libraries that made this website possible.
 
-### Analyzing the Bundle Size
+Thank you for checking out the Qorelabs website project! If you have any questions, feel free to reach out via the contact details above.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
