@@ -6,6 +6,9 @@ import axios from 'axios';
 
 function Home() {
   const [backgroundImage, setBackgroundImage] = useState('');
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     const fetchBackgroundImage = async () => {
@@ -28,6 +31,47 @@ function Home() {
 
     fetchBackgroundImage();
   }, []);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleSubscribe = async () => {
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+      setSuccessMessage('');
+      setEmail(''); // Clear email input after failed subscription
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        'https://qorelabsback.netlify.app/.netlify/functions/subscribeEmail',
+        { email },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setSuccessMessage('Subscription successful!');
+        setError('');
+        setEmail(''); // Clear email input after successful subscription
+      }
+    } catch (err) {
+      console.error('Subscription failed:', err);
+      setError('Failed to subscribe. Please try again later.');
+      setSuccessMessage('');
+      setEmail(''); // Clear email input after failed subscription
+    }
+  };
 
   return (
     <motion.div
@@ -114,9 +158,16 @@ function Home() {
         <input
           type="email"
           placeholder="Enter your email address"
-          className="p-2 md:p-3 rounded-md mb-4 w-full max-w-xs text-black"
+          className="p-2 md:p-3 rounded-md mb-2 w-full max-w-xs text-black"
+          value={email}
+          onChange={handleEmailChange}
         />
-        <button className="ml-0 md:ml-4 px-4 py-2 md:px-6 md:py-3 bg-white text-[#8c52ff] rounded-lg shadow-lg hover:bg-gray-100 transition duration-300">
+        {error && <p className="text-sm text-red-500 mb-2">{error}</p>}
+        {successMessage && <p className="text-sm text-green-500 mb-2">{successMessage}</p>}
+        <button
+          className="ml-0 md:ml-4 px-4 py-2 md:px-6 md:py-3 bg-white text-[#8c52ff] rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"
+          onClick={handleSubscribe}
+        >
           Subscribe
         </button>
       </div>
