@@ -84,9 +84,7 @@ function AboutUs() {
               className="bg-white p-4 rounded-lg shadow-md"
               whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: 'easeInOut' } }}
             >
-              <img src="https://via.placeholder.com/150" alt="Biodun Kuye" className="rounded-full mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold"> Lanre Kuye</h3>
-              <p className="text-sm text-[#555]">Chief Operating Officer (COO)</p>
+              
             </motion.div>
           </div>
         </motion.div>
