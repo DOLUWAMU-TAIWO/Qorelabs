@@ -1,92 +1,105 @@
 // src/components/AboutUs.js
 import React from 'react';
 import { motion } from 'framer-motion';
+import Particles from 'react-tsparticles';
 
 function AboutUs() {
   return (
     <motion.div
       id="aboutus"
-      className="min-h-screen flex flex-col items-center justify-center px-4 bg-gradient-to-b from-white to-[#f3f4f6] text-[#333] text-center"
+      className="min-h-screen flex flex-col items-center justify-center px-4 text-[#1C2B33] text-center relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: 'easeInOut' }}
+      transition={{ duration: 1.5, ease: 'easeInOut' }}
     >
+      {/* Particle Background */}
+      <Particles
+        id="tsparticles"
+        options={{
+          background: {
+            color: "#f6f6f6",
+          },
+          particles: {
+            color: {
+              value: "#8c52ff",
+            },
+            links: {
+              color: "#8c52ff",
+              distance: 150,
+              enable: true,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+            },
+          },
+        }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
+      />
+
+      {/* About Us Section */}
       <motion.div
-        className="bg-white bg-opacity-90 p-6 md:p-8 rounded-md shadow-md w-full max-w-lg md:max-w-2xl"
+        className="w-full max-w-lg md:max-w-2xl z-10" // Added z-index to ensure visibility over the particle background
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, ease: 'easeInOut' }}
       >
         <motion.h1
-          className="text-3xl md:text-5xl font-bold text-[#8c52ff] mb-4"
+          className="text-4xl md:text-6xl font-extrabold text-[#1C2B33] mb-8"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5, ease: 'easeInOut' }}
-          whileHover={{ scale: 1.15, transition: { duration: 0.4, ease: 'easeInOut' } }}
+          transition={{ duration: 1.2, ease: 'easeInOut' }}
         >
           About Us
         </motion.h1>
         <motion.p
-          className="text-base md:text-lg mb-6 text-[#555]"
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.7, ease: 'easeInOut' }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.4, ease: 'easeInOut' } }}
-        >
-          Qorelabs was founded by Doluwamu Kuye with a vision to pursue excellence and innovate across engineering disciplines.
-          We are strategically positioning ourselves for the age of quantum computing while remaining versatile with today's technologies.
-          From building next-generation web, mobile, and desktop applications to researching the cutting edge of machine learning, we strive to stay ahead of the curve.
-        </motion.p>
-        <motion.p
-          className="text-base md:text-lg mb-6 text-[#555]"
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.9, ease: 'easeInOut' }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.4, ease: 'easeInOut' } }}
-        >
-          Our mission is to provide the best possible technology solutions that bridge the gap between today's needs and tomorrow's possibilities. We believe that by being proactive and forward-thinking, we can make a significant impact in shaping the future of technology.
-        </motion.p>
-        <motion.blockquote
-          className="italic text-lg md:text-xl text-[#8c52ff] mt-8"
+          className="text-lg md:text-xl mb-6 leading-relaxed font-light"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.1, ease: 'easeInOut' }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.4, ease: 'easeInOut' } }}
+          transition={{ duration: 1.5, delay: 0.5, ease: 'easeInOut' }}
+        >
+          Qorelabs was founded by <span className="font-bold text-[#8c52ff]">Doluwamu Kuye</span> with a vision to pursue excellence and innovate across engineering disciplines. 
+          We are positioning ourselves for the age of quantum computing while remaining versatile with today's technologies.
+        </motion.p>
+        <motion.p
+          className="text-lg md:text-xl mb-6 leading-relaxed font-light"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.7, ease: 'easeInOut' }}
+        >
+          From building next-generation web, mobile, and desktop applications to researching the cutting edge of machine learning, we strive to stay ahead of the curve. 
+          Our mission is to provide the best possible technology solutions that bridge the gap between today's needs and tomorrow's possibilities.
+        </motion.p>
+        <motion.blockquote
+          className="italic text-2xl md:text-3xl text-[#8c52ff] mt-8 font-semibold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 1, ease: 'easeInOut' }}
         >
           "Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke
         </motion.blockquote>
-        {/* Team Section */}
+      </motion.div>
+
+      {/* Founder Section */}
+      <motion.div
+        className="mt-16 w-full max-w-lg md:max-w-xl z-10" // Added z-index to keep it above the particle layer
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 1.5, ease: 'easeInOut' }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-[#8c52ff] mb-6">Our Founder</h2>
         <motion.div
-          className="team-section mt-12 w-full max-w-3xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          className="p-6 md:p-8 rounded-lg shadow-lg"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8c52ff] mb-6">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div
-              className="bg-white p-4 rounded-lg shadow-md"
-              whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: 'easeInOut' } }}
-            >
-              <img src="https://via.placeholder.com/150" alt="Doluwamu Kuye" className="rounded-full mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold">Doluwamu Kuye</h3>
-              <p className="text-sm text-[#555]">Founder & CEO</p>
-            </motion.div>
-            <motion.div
-              className="bg-white p-4 rounded-lg shadow-md"
-              whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: 'easeInOut' } }}
-            >
-              <img src="https://via.placeholder.com/150" alt="Demilade Kuye" className="rounded-full mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold">Demilade Kuye</h3>
-              <p className="text-sm text-[#555]">Chief Financial Officer (CFO)</p>
-            </motion.div>
-            <motion.div
-              className="bg-white p-4 rounded-lg shadow-md"
-              whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: 'easeInOut' } }}
-            >
-              
-            </motion.div>
-          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-[#1C2B33] mb-4">Doluwamu Kuye</h3>
+          <p className="text-lg md:text-xl text-[#555]">
+            Doluwamu is an innovator, visionary leader, and an advocate for the integration of cutting-edge technology across industries. 
+            His passion for quantum computing and advanced software solutions drives Qorelabs' vision of making the future of technology a present reality.
+          </p>
         </motion.div>
       </motion.div>
     </motion.div>
